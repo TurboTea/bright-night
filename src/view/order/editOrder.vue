@@ -64,7 +64,7 @@
                     </el-form-item>
                   </el-col>
                 </el-row>
-      
+
                 <el-form-item>
                   <el-button type="primary" size="small" @click="getSendInfo">确定</el-button>
                   <el-button size="small" @click="showSendGoodsPopover = false">取消</el-button>
@@ -73,10 +73,10 @@
             </el-popover>
             <el-button class="filter-item" type="info" v-waves v-popover:sendGoodsPopover>发货
             </el-button>
-            
+
             <el-button class="filter-item" type="danger" v-waves>取消
             </el-button>
-            
+
             <el-button class="filter-item" type="success" v-waves @click="goBack">返回
             </el-button>
           </el-col>
@@ -91,25 +91,25 @@
               <img :src="scope.row.url" style="width: 60px;height: 60px;padding-top: 5px;"/>
             </template>
           </el-table-column>
-      
+
           <el-table-column align="center" prop="title" min-width="200px" label="商品名称" show-overflow-tooltip>
           </el-table-column>
-      
+
           <el-table-column align="center" min-width="150px" prop="id" label="商品编码">
           </el-table-column>
-      
+
           <el-table-column align="center" width="150px" prop="sku" label="规格">
           </el-table-column>
-    
+
           <el-table-column align="center" width="100px" prop="quantity" label="数量">
           </el-table-column>
-    
+
           <el-table-column align="center" width="100px" prop="unit" label="单位">
           </el-table-column>
-          
+
           <el-table-column align="center" width="100px" prop="unitPrice" label="单价">
           </el-table-column>
-    
+
           <el-table-column align="center" width="100px" prop="total" label="金额小计">
           </el-table-column>
         </el-table>
@@ -151,7 +151,7 @@
           </el-col>
         </el-row>
       </div>
-    </div>   
+    </div>
   </div>
 </template>
 
@@ -216,7 +216,7 @@
       logisticsCompanyList: function() {
         var vm = this;
         global.get( api.logisticsCompany, null, function(response) {
-          vm.selectLogisticsCompany = response.body.data.logisticsCompany;           
+          vm.selectLogisticsCompany = response.body.data.logisticsCompany;
         }, function(response) {
             alert("请求失败了");
         }, false)
@@ -256,9 +256,9 @@
           }, 0);
         });
         return sums;
-      }, 
+      },
       goBack() {
-        this.$router.push('/index/order/orderAccount'); 
+        this.$router.push('/index/order/orderAccount');
       }
     }
   };

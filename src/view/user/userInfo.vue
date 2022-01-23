@@ -4,7 +4,7 @@
     <!--  <div class="bre-crumb">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item>员工基本信息</el-breadcrumb-item>  
+          <el-breadcrumb-item>员工基本信息</el-breadcrumb-item>
         </el-breadcrumb>
      </div> -->
     <!-- 表头 -->
@@ -28,7 +28,7 @@
         </el-form-item>
       </el-form>
     </div>
-    
+
     <!-- 表头的新增操作 -->
     <div class="add">
       <el-dialog title="收货地址" :visible.sync="dialogFormVisible">
@@ -64,7 +64,7 @@
     </div>
 
     <!-- 表格内容 -->
-    <div class="info-con"> 
+    <div class="info-con">
       <el-table ref="multipleTable" :data="tableData3" border tooltip-effect="dark" style="width: 100%"
        @selection-change="handleSelectionChange">
           <el-table-column type="selection" width="55"></el-table-column>
@@ -114,10 +114,10 @@
           </el-form-item>
         </el-form>
         <div slot="footer" class="dialog-footer">
-         
+
             <el-button v-waves @click="dialogFormVisible1 = false">取消编辑</el-button>
             <el-button v-waves type="primary" @click="handledoneEdit()">完成编辑</el-button>
-          
+
         </div>
       </el-dialog>
       <router-view></router-view>
@@ -140,7 +140,7 @@
     </div>
 
   </div>
- 
+
 </template>
 
 <script>
@@ -177,7 +177,7 @@
            },
            formLabelWidth: '120px',
            //表单数据（已在JSon文件中引用）
-          
+
           multipleSelection: [],//定义选中多行的属性，用于函数的传参
           // 表尾分页
           currentPage4: 4
@@ -266,18 +266,18 @@
          handleEdit(index, row) {
              this.dialogFormVisible1 = true;
             // console.log("选中的条数：",index, "选中的row属性：",row);
-           
+
             // this.editForm = row;//=表示赋值、引用（浅拷贝）指向同一内存地址
             this.editForm = JSON.parse(JSON.stringify(row)); //对传参row进行深度拷贝
             // this.$forceUpdate()//强制渲染
              this.editIndex = index;
 
-          
+
          },
          //操作中的编辑提交
          handledoneEdit(){
            // console.log("已完成编辑！");
-              
+
             console.log(this.editIndex);
             console.log(this.editForm)
             var vm = this;
@@ -290,7 +290,7 @@
 
          },
          //操作中的单个删除
-         handleDelete(index, row) {  
+         handleDelete(index, row) {
             console.log("单个删除的index：",index);
             console.log("单个删除的row：",row);
              // console.log(index, row);
@@ -310,7 +310,7 @@
               //  //对象转数组
               // ids = Array.prototype.slice.call(ids);
               // console.log(ids instanceof Array);
-             
+
 
             }
             console.log("获取到所有选中的id，组成新的数组是：",ids);
@@ -332,7 +332,7 @@
             //   }
             // }
             // vm.multipleSelection = arr;
-            // this.multipleSelection = [];                                                                                                 
+            // this.multipleSelection = [];
 
          },
          //表头的导出
@@ -382,5 +382,5 @@
   .info-con{
     margin: 20px 10px;
   }
- 
+
 </style>

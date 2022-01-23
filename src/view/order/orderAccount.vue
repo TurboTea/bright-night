@@ -36,26 +36,26 @@
               </el-form-item>
             </el-col>
           </el-row>
-      
+
           <el-row>
             <el-col :span="10">
               <el-form-item label="收货人信息">
                 <el-input size="small" placeholder="请输入收货人/收货电话" v-model="listQuery.customerInfo" style="width: 300px;"></el-input>
               </el-form-item>
             </el-col>
-        
+
             <el-col :span="10">
               <el-form-item label="商品信息">
                 <el-input size="small" placeholder="请输入商品名称/编码" v-model="listQuery.goodsInfo" style="width: 300px;"></el-input>
               </el-form-item>
             </el-col>
           </el-row>
- 
+
           <el-select clearable class="filter-item" style="width: 150px; margin-left:80px; margin-bottom: 20px;" v-model="listQuery.type" placeholder="类型">
             <el-option v-for="item in  orderStatus" :key="item.value" :label="item.label" :value="item.value">
             </el-option>
           </el-select>
-      
+
           <el-form-item>
             <el-button type="primary" size="small" @click="handleAdvanceSearch">确定</el-button>
             <el-button size="small" @click="showAdvancedSearchPopover = false">取消</el-button>
@@ -65,9 +65,9 @@
 
       <el-button class="filter-item" type="primary" v-waves icon="search" @click="handleSearch" size="small">搜索</el-button>
       <el-button class="filter-item" type="primary" v-waves icon="search" v-popover:advancedSearchPopover size="small">高级搜索</el-button>
-      <el-button class="filter-item" type="primary" v-waves icon="document" size="small" @click="handleDownload">导出</el-button>    
-    </div> 
-    <!--订单状态按钮--> 
+      <el-button class="filter-item" type="primary" v-waves icon="document" size="small" @click="handleDownload">导出</el-button>
+    </div>
+    <!--订单状态按钮-->
     <div class="top-distance">
       <el-row>
         <el-button class="filter-item" type="primary" v-waves @click="handleFilter" size="small">全部订单</el-button>
@@ -79,7 +79,7 @@
         <el-button class="filter-item" type="primary" v-waves icon="edit" @click="handleSendAll" size="small">批量发货</el-button>
         <el-button class="filter-item" type="primary" v-waves icon="edit" @click="handleDelAll" size="small">批量删除</el-button>
       </el-row>
-    </div>  
+    </div>
     <!-- 表格 -->
     <el-table ref="multipleTable" @selection-change="handleSelectionChange" :data="list" v-loading.body="listLoading" element-loading-text="拼命加载中" border fit highlight-current-row  >
          <el-table-column type="selection" width="55">
@@ -170,7 +170,7 @@
           orderTime: null,
           customerInfo: null,
           goodsInfo: null,
-          type: null,     
+          type: null,
         },
         orderStatus: [{label: '待付款', value: 1}, {label: '待发货', value: 2}, {label: '已发货', value: 3}, {label: '已取消', value: 4}, {label: '已完成', value: 5}],
         dialogFormVisible: false,
@@ -209,7 +209,7 @@
         console.log("所有订单请求订单信息json——————",JSON.stringify(vm.listQuery));
         global.get( api.orderInfo, { params: vm.listQuery }, function(response) {
             var data = response.body;
-            vm.initData (data.data.data)  
+            vm.initData (data.data.data)
           }, function(response) {
             alert("请求失败了");
         }, false)
@@ -220,7 +220,7 @@
         var vm = this;
         global.get( api.waitedPay, { params: vm.listQuery }, function(response) {
             var data = response.body;
-            vm.initData (data.data.data) 
+            vm.initData (data.data.data)
           }, function(response) {
             alert("请求失败了");
         }, false)
@@ -240,7 +240,7 @@
         var vm = this;
         global.get( api.sended, { params: vm.listQuery }, function(response) {
             var data = response.body;
-            vm.initData (data.data.data) 
+            vm.initData (data.data.data)
           }, function(response) {
             alert("请求失败了");
         }, false)
@@ -250,7 +250,7 @@
         var vm = this;
         global.get( api.success, { params: vm.listQuery }, function(response) {
             var data = response.body;
-            vm.initData (data.data.data) 
+            vm.initData (data.data.data)
           }, function(response) {
             alert("请求失败了");
         }, false)
@@ -260,7 +260,7 @@
         var vm = this;
         global.get( api.close, { params: vm.listQuery }, function(response) {
             var data = response.body;
-            vm.initData (data.data.data) 
+            vm.initData (data.data.data)
           }, function(response) {
             alert("请求失败了");
         }, false)
@@ -323,7 +323,7 @@
         var vm = this;
         global.get( api.success, { params: vm.listQuery }, function(response) {
             var data = response.body;
-            vm.initData (data.data.data) 
+            vm.initData (data.data.data)
           }, function(response) {
             alert("请求失败了");
         }, false)
@@ -365,16 +365,16 @@
     width: 1210px;
     padding-left: 20px;
     padding-top: 25px;
-  } 
+  }
   @media only screen and (max-width: 1400px) {
     .account-container {
       width: 1160px;
       padding-top: 20px;
-    } 
+    }
   }
   .account-container .el-table {
     margin-top: 20px;
-  } 
+  }
   .account-container .edit {
     float: left;
   }

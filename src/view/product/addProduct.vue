@@ -9,9 +9,9 @@
 			        </el-button>
 			        <el-button type="warning" @click="cancel()">取消</el-button>
 		        </el-row>
-	        	
+
 	        </div>
-      
+
         	<div class="createPost-main-container">
 		        <!--基础信息-->
 		        <h3>基础信息</h3>
@@ -34,7 +34,7 @@
 			            </el-form-item>
 		            </el-col>
 		        </el-row>
-	  
+
 		        <el-row>
 		            <el-col :span="12">
 			            <el-form-item label="计量单位" prop="unitId">
@@ -49,7 +49,7 @@
 			            </el-form-item>
 		            </el-col>
 		        </el-row>
-	  
+
 		        <el-row>
 		            <el-col :span="12">
 			            <el-form-item label="商品标签" prop="tags">
@@ -75,27 +75,27 @@
 			              <el-input size="small" v-model="scope.row.name"></el-input>
 			            </template>
 		            </el-table-column>
-		  
+
 		            <el-table-column align="center" width="200px" label="价格">
 			            <template scope="scope">
 			            	<el-input-number :controls="false" size="small" v-model="scope.row.price" :min="1"></el-input-number>
 			            </template>
 		            </el-table-column>
-		          
+
 		            <el-table-column align="center" width="300px" label="库存">
 			            <template scope="scope">
 			            	<el-input-number size="small" v-model="scope.row.stock" :min="1"></el-input-number>
 			                <el-checkbox size="small">无限库存</el-checkbox>
 			            </template>
 		            </el-table-column>
-		    
+
 		            <el-table-column align="center" label="操作" width="120">
 			            <template scope="scope">
 			                <el-button size="small" type="danger" icon="delete">删除</el-button>
 			            </template>
 		            </el-table-column>
 		        </el-table>
-	  
+
 		        <!--商品图片-->
 		        <h3 class="toph3">商品图片<span style="font-size: 12px; color: darkgrey; padding-left: 10px;">最多20张，默认第一张图片作为主图，可以拖动图片调整</span></h3>
 		        <el-upload
@@ -108,11 +108,11 @@
 		          multiple>
 		          <i class="el-icon-plus"></i>
 		        </el-upload>
-	  
+
 		        <el-dialog v-model="showImagePreview" size="tiny">
 		        	<img width="100%" :src="previewImageUrl" alt="">
 		        </el-dialog>
-		  
+
        		</div>
     	</el-form>
   </div>
@@ -121,7 +121,7 @@
 <script>
     import sortable from 'html5sortable';
     // import wangeditor from 'wangeditor';//轻量级富文本编辑器
-  
+
     export default {
 	    name: 'addProduct',
 	    data() {
@@ -158,7 +158,7 @@
 				            value: 4,
 				            label: '高杆灯',
 				            children: [
-					            { value: 10, label: '白炽灯' }, 
+					            { value: 10, label: '白炽灯' },
 					            { value: 11, label: '暖光灯' }
 				            ]
 			            },
@@ -166,41 +166,41 @@
 				            value: 5,
 				            label: '中杆灯',
 				            children: [
-					            { value: 12, label: '格栅灯' }, 
+					            { value: 12, label: '格栅灯' },
 					            { value: 13, label: '天花灯'},
 					            { value: 14, label: '日光灯'}
 				            ]
 				        },
 		            ]
-		        }, 
+		        },
 		        {
 		            value: 2,
 		            label: '步道与庭院灯',
 		            children: [
-		            	{   value: 6, 
+		            	{   value: 6,
 		            		label: '景观灯',
 		            		children: [
-					            { value: 15, label: '格栅灯' }, 
+					            { value: 15, label: '格栅灯' },
 					            { value: 16, label: '天花灯'},
 					            { value: 17, label: '筒灯'}
 				            ]
-		            	}, 
-		            	{   value: 7, 
+		            	},
+		            	{   value: 7,
 		            		label: '面板灯',
 		            		children: [
-					            { value: 18, label: '洗墙灯' }, 
+					            { value: 18, label: '洗墙灯' },
 					            { value: 19, label: '天花灯'},
 					            { value: 20, label: '水晶灯'},
 					            { value: 21, label: '台灯'}
 				            ]
 		            	}
 		            ]
-		        }, 
+		        },
 		        {
 		            value: 3,
 		            label: '埋地灯',
 		            children: [
-			            { value: 8, label: '指示灯' }, 
+			            { value: 8, label: '指示灯' },
 			            { value: 9, label: '工程灯'}
 		            ]
 		        }],

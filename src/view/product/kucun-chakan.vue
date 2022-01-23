@@ -17,7 +17,7 @@
       <el-button  type="success" @click="handleCreate"><i class="fa fa-plus-circle" aria-hidden="true"></i>  添加</el-button>
       <el-button  type="success"><i class="fa fa-download" aria-hidden="true" @click="handleDownload"></i>  导出</el-button>
     </div>
-    
+
     <!-- 新增弹窗 -->
     <el-dialog title="表单新增" :visible.sync="dialogFormVisible">
 
@@ -36,17 +36,17 @@
             </el-form-item>
             <el-form-item label="入仓时间">
               <el-input v-model="temp.start"></el-input>
-            </el-form-item> 
+            </el-form-item>
             <el-form-item label="单价">
               <el-input v-model="temp.price"></el-input>
             </el-form-item>
             <el-form-item label="数量">
               <el-input v-model="temp.amount"></el-input>
-            </el-form-item>            
+            </el-form-item>
           </el-form>
 
           <div slot="footer" class="dialog-footer">
-            <el-button @click="dialogFormVisible = false">取 消</el-button>           
+            <el-button @click="dialogFormVisible = false">取 消</el-button>
             <el-button type="primary" @click="handleCreateSubmit">确 定</el-button>
           </div>
     </el-dialog>
@@ -60,7 +60,7 @@
         <!-- <el-table-column label="ID" width="120">
           <template scope="scope">{{ scope.row.date }}</template>
         </el-table-column> -->
-        
+
         <el-table-column prop="ID" label="ID" width="80">
             <template scope="scope">
               {{scope.$index}}
@@ -82,7 +82,7 @@
 
         <el-table-column prop="start" label="入仓时间" show-overflow-tooltip width="100">
         </el-table-column>
-        
+
         <el-table-column prop="price" label="单价" sortable show-overflow-tooltip width="100">
         </el-table-column>
 
@@ -102,7 +102,7 @@
 
     </el-table>
     </div>
-    
+
     <!-- 分页 -->
     <div class="block">
         <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage4" :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400">
@@ -116,7 +116,7 @@
   export default {
       data () {
           return {
-            tableData3: [                   
+            tableData3: [
             ],
             //搜索框内的对象
             options4: [],
@@ -156,7 +156,7 @@
                     vm.list = data.data;
                     for(var day of vm.list){
                        vm.states.push(day.detail);
-                    }   
+                    }
                     vm.list = vm.states.map(item => {
                       return { value: item, label: item };
                     });
@@ -214,7 +214,7 @@
                 //这里作演示用，正式新增 请提交到接口
                 vm.tableData3.push(vm.temp)
                 console.log('新增后',vm.tableData3)
-                
+
                 this.dialogFormVisible = false;
             },
             handleSelectionChange(val) {

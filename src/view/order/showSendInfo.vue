@@ -8,7 +8,7 @@
 			  <el-step title="买家确认收货"></el-step>
 			  <el-step title="评价" style="width: 70px;"></el-step>
 			</el-steps>
-		
+
 			<!--等待买家收货提示popover-->
 			<div class="infoBigBox" style="border: 1px solid lightpink">
 			  <ul class="waitedReceiveTips">
@@ -17,7 +17,7 @@
 			  	<li><h5>如果买家表示为收到货或者收到货物有问题， 请及时联系买家积极处理， 友好协商。</h5></li>
 			  </ul>
 			</div>
-		</el-row>	
+		</el-row>
 
 		<div class="infoBigBox">
 	        <el-tabs v-model="activeName" type="card" style="padding: 20px;">
@@ -31,7 +31,7 @@
 		            				<li><p>昵称： 张爱玲</p></li>
 		            				<li><p>所在地区</p></li>
 		            				<li><p>邮件：***发送站内心</p></li>
-		            			</ul>  	
+		            			</ul>
 		            	    </div>
 	            	    </el-col>
 	            	    <el-col :span="12">
@@ -40,7 +40,7 @@
 		            				<li><p>提醒买家</p></li>
 		            				<li><p>联系电话： 13412****71</p></li>
 		            				<li><p>支付宝：1***付款给买家</p></li>
-		            			</ul>  		
+		            			</ul>
 		            	    </div>
 	            	    </el-col>
 	            	</el-row>
@@ -64,7 +64,7 @@
 	            </el-tab-pane>
 	            <el-tab-pane label="收货和物流" name="second">收货和物流</el-tab-pane>
 	        </el-tabs>
-		</div>	
+		</div>
 	</div>
 </template>
 <script>
@@ -87,8 +87,8 @@
 		margin-left: 60px;
 	}
 	.infoBigBox {
-		width:995px; 
-		border: 1px solid #d1dbe5; 
+		width:995px;
+		border: 1px solid #d1dbe5;
 		margin-top: 30px;
 	}
 	.waitedReceiveTips {

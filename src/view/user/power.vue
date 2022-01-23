@@ -4,7 +4,7 @@
      <!-- <div class="bre-crumb">
         <el-breadcrumb separator="/">
           <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-          <el-breadcrumb-item>员工权限</el-breadcrumb-item>  
+          <el-breadcrumb-item>员工权限</el-breadcrumb-item>
         </el-breadcrumb>
      </div> -->
 
@@ -14,7 +14,7 @@
      </div>
 
      <!-- 表格内容 -->
-     <div class="info-con"> 
+     <div class="info-con">
        <el-table ref="multipleTable" :data="tableData1"  border tooltip-effect="dark" style="width: 100%"
         @selection-change="handleSelectionChange">
            <el-table-column type="selection" width="55"></el-table-column>
@@ -22,7 +22,7 @@
               <template scope="scope">
                  <template >
                       <span >{{ scope.$index  }} &nbsp; &nbsp;</span>
-                 </template > 
+                 </template >
               </template>
            </el-table-column>
            <el-table-column prop="roleName" label="角色" width="120" ></el-table-column>
@@ -30,10 +30,10 @@
               <template scope="scope">
                  <template v-for="item in scope.row.userList">
                       <span >{{ item.userName  }} &nbsp; &nbsp;</span>
-                 </template > 
+                 </template >
               </template>
            </el-table-column>
-         
+
            <el-table-column label="操作" width="400">
              <template scope="scope">
                <el-button v-waves icon="edit" size="small" @click="setPermissions(scope.$index, scope.row)" >设置权限</el-button>
@@ -75,9 +75,9 @@
               <el-form class="small-space" :model="form" label-position="left" label-width="70px" style='width: 100%; '>
                <!-- <el-checkbox-group v-model="smMenuBeanDtoList"> -->
                 <template v-for="item in permissionMenuList">
-                    <el-checkbox  label="item.url" name="type" style="margin:0 15px 15px 0;"  v-model="item.checked">{{ item.menuName }}</el-checkbox> 
+                    <el-checkbox  label="item.url" name="type" style="margin:0 15px 15px 0;"  v-model="item.checked">{{ item.menuName }}</el-checkbox>
                 </template>
-                  
+
                 <!-- </el-checkbox-group> -->
               </el-form>
 
@@ -112,7 +112,7 @@
   export default {
       data () {
           return {
-              //表格数据 
+              //表格数据
               tableData1: null,
               multipleSelection: [],//选中多行的属性
               //新增角色
@@ -135,7 +135,7 @@
               formLabelWidth: '120px',
               // 表尾分页
               currentPage4: 4
-            
+
           }
       },
       mounted:function(){
@@ -164,7 +164,7 @@
            let vm = this;
            vm.form = {
                     roleName: '',
-                    remark: ''   
+                    remark: ''
            }
         },
         //新增角色
@@ -256,7 +256,7 @@
          },
 
 
-       
+
       }
    }
 </script>
@@ -279,5 +279,5 @@
   .info-footer{
     margin-top: 50px;
   }
- 
+
 </style>

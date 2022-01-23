@@ -15,7 +15,7 @@
           <el-input @keyup.enter.native="handleFilter" style="width: 230px;" class="filter-item"
                     placeholder="请输入商品名称/编码/规格/关键字" v-model="productListQuery.title" size="small">
           </el-input>
-          
+
           <el-cascader class="filter-item"
                        expand-trigger="hover"
                        :options="lightList"
@@ -29,7 +29,7 @@
           </el-select>
           <el-button class="filter-item" type="primary" v-waves icon="search" @click="handleFilter" size="small">搜索
           </el-button>
-          
+
           <!--高级搜索popover-->
           <el-popover
             ref="advancedSearchPopover"
@@ -55,7 +55,7 @@
                   </el-form-item>
                 </el-col>
               </el-row>
-              
+
               <el-row>
                 <el-col :span="24">
                   <el-form-item label="商品标签">
@@ -70,7 +70,7 @@
                   </el-form-item>
                 </el-col>
               </el-row>
-              
+
               <el-row>
                 <el-col :span="24">
                   <el-form-item label="商品状态">
@@ -86,7 +86,7 @@
                   </el-form-item>
                 </el-col>
               </el-row>
-              
+
               <el-form-item>
                 <el-button type="primary" size="small">确定</el-button>
                 <el-button size="small" @click="showAdvancedSearchPopover = false">取消</el-button>
@@ -98,7 +98,7 @@
           </el-button>
         </el-col>
       </el-row>
-    
+
     </div>
     <!--表格-->
     <div class="tableList">
@@ -108,31 +108,31 @@
                          type="selection"
                          width="55">
         </el-table-column>
-        
+
         <el-table-column align="center" width="120px" label="商品编码" prop="id" sortable>
         </el-table-column>
 
         <el-table-column align="center" width="150px" label="商品名称" prop="title">
         </el-table-column>
-        
+
         <el-table-column align="center" width="100px" label="商品规格" prop="sku">
         </el-table-column>
-        
+
         <el-table-column align="center" width="70px" label="单位" prop="unit">
         </el-table-column>
-        
+
         <el-table-column align="center" width="100px" label="市场价" prop="marketPrice" sortable>
         </el-table-column>
-        
+
         <el-table-column align="center" width="100px" label="成本价" prop="costPrice" sortable>
         </el-table-column>
-        
+
         <el-table-column align="center" width="100px" label="库存" prop="stock" sortable>
         </el-table-column>
-        
+
         <el-table-column align="center" width="180px" label="新增时间" prop="createTime" sortable>
         </el-table-column>
-        
+
         <el-table-column align="center" label="状态" width="100">
           <template scope="scope">
             <el-tag :type="scope.row.status | statusFilter">{{scope.row.status ? '已上架' : '待上架'}}</el-tag>
@@ -149,7 +149,7 @@
             </el-row>
           </template>
         </el-table-column>
-        
+
       </el-table>
     </div>
     <div v-show="!listLoading" class="pagination-container">
@@ -189,7 +189,7 @@
                     value: 4,
                     label: '高杆灯',
                     children: [
-                      { value: 10, label: '白炽灯' }, 
+                      { value: 10, label: '白炽灯' },
                       { value: 11, label: '暖光灯' }
                     ]
                   },
@@ -197,41 +197,41 @@
                     value: 5,
                     label: '中杆灯',
                     children: [
-                      { value: 12, label: '格栅灯' }, 
+                      { value: 12, label: '格栅灯' },
                       { value: 13, label: '天花灯'},
                       { value: 14, label: '日光灯'}
                     ]
                 },
                 ]
-            }, 
+            },
             {
                 value: 2,
                 label: '步道与庭院灯',
                 children: [
-                  {   value: 6, 
+                  {   value: 6,
                     label: '景观灯',
                     children: [
-                      { value: 15, label: '格栅灯' }, 
+                      { value: 15, label: '格栅灯' },
                       { value: 16, label: '天花灯'},
                       { value: 17, label: '筒灯'}
                     ]
-                  }, 
-                  {   value: 7, 
+                  },
+                  {   value: 7,
                     label: '面板灯',
                     children: [
-                      { value: 18, label: '洗墙灯' }, 
+                      { value: 18, label: '洗墙灯' },
                       { value: 19, label: '天花灯'},
                       { value: 20, label: '水晶灯'},
                       { value: 21, label: '台灯'}
                     ]
                   }
                 ]
-            }, 
+            },
             {
                 value: 3,
                 label: '埋地灯',
                 children: [
-                  { value: 8, label: '指示灯' }, 
+                  { value: 8, label: '指示灯' },
                   { value: 9, label: '工程灯'}
                 ]
             }],
@@ -265,7 +265,7 @@
             vm.productListQuery.currPage = data.data.currPage;
             vm.productListQuery.pageSize = data.data.pageSize;
             vm.total = data.data.total;
-            vm.listLoading = false;   
+            vm.listLoading = false;
           }, function(response) {
             alert("请求失败了");
         }, false)

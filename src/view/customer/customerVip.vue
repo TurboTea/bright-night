@@ -35,7 +35,7 @@
     <el-table-column
       prop="name"
       label="姓名"
-      width="120">     
+      width="120">
     </el-table-column>
     <el-table-column
       prop="phone"
@@ -173,7 +173,7 @@
               payS_shipS:'已付款/已发货',
               status:'未处理',
               date: '2017-08-01',
-              operate:''                                      
+              operate:''
             }, {
               name: '李小东',
               phone:'0662-23568887',
@@ -182,7 +182,7 @@
               payS_shipS:'已付款/未发货',
               status:'已取消',
               date: '2017-08-02',
-              operate:''  
+              operate:''
             }, {
               name: '程小明',
               phone:'1345678905',
@@ -191,7 +191,7 @@
               payS_shipS:'未付款/未发货',
               status:'未处理',
               date: '2017-08-03',
-              operate:''  
+              operate:''
             }, {
               name: '王小兰',
               phone:'1589275612',
@@ -218,7 +218,7 @@
               name: '王小虎',
               address: '上海市普陀区金沙江路 1518 弄'
             }]
-           
+
           }
         },
          methods: {
@@ -232,7 +232,7 @@
              return 'positive-row';
            }
              return '';
-      } 
+      }
     }
    }
 </script>

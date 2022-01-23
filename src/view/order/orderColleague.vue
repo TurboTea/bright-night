@@ -10,8 +10,8 @@
       </el-input>
       <el-button class="filter-item" type="primary" v-waves icon="search" @click="handleFilter">搜索</el-button>
       <el-button class="filter-item" type="primary" v-waves icon="edit" @click="handleDelAll">批量删除</el-button>
-      <el-button class="filter-item" type="primary" v-waves icon="document" @click="handleDownload">导出</el-button>    
-    </div> 
+      <el-button class="filter-item" type="primary" v-waves icon="document" @click="handleDownload">导出</el-button>
+    </div>
 
     <!-- 表格 -->
     <el-table ref="multipleTable" @selection-change="handleSelectionChange" :data="list" v-loading.body="listLoading" element-loading-text="拼命加载中" border fit highlight-current-row  >
@@ -78,7 +78,7 @@
 </template>
 
 <script>
-	//员工编号 员工姓名 订单编号 成交日期 金额 订单状态 审核人 	
+	//员工编号 员工姓名 订单编号 成交日期 金额 订单状态 审核人
   import { api } from '@/global/api'
   import { global } from '@/global/global'
   export default {
@@ -92,7 +92,7 @@
         listQuery: { //查询条件
           currPage: 1,
           pageSize: 10,
-          colleagueId: '', 
+          colleagueId: '',
           colleagueName: ''
         },
         multipleSelection: [],  //批量删除
@@ -128,7 +128,7 @@
             vm.listQuery.currPage = data.data.currPage;
             vm.listQuery.pageSize = data.data.pageSize;
             vm.total = data.data.total;
-            vm.listLoading = false;   
+            vm.listLoading = false;
           }, function(response) {
             alert("请求失败了");
       	}, false)
@@ -206,16 +206,16 @@
     width: 1210px;
     padding-left: 20px;
     padding-top: 15px;
-  } 
+  }
   @media only screen and (max-width: 1400px) {
     .colleague-container {
       width: 1160px;
       padding-top: 20px;
-    } 
+    }
   }
   .colleague-container .el-table {
     margin-top: 20px;
-  } 
+  }
   .colleague-container .edit {
     float: left;
   }

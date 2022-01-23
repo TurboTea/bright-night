@@ -16,20 +16,24 @@ import sideBar from '@/view/layout/SideBar'
 import navBar from '@/view/layout/NavBar'
 export default {
   components: { levelbar, sideBar, navBar },
-  data() {
-     return {
+  data () {
+    return {
       activeIndex: '1',
       activeIndex2: '1'
     }
   }
- }
+}
 </script>
 
 <style>
-  body {
-    overflow-x: hidden; 
+  html, body,#app {
+    height: 100%;
+    min-height:500px;
   }
-  * { 
+  body {
+    overflow-x: hidden;
+  }
+  * {
     padding: 0;
     margin: 0;
   }
@@ -38,7 +42,7 @@ export default {
     font-size: 14px;
   }
   .post .home {
-    color: #c5d1de; 
+    color: #c5d1de;
     font-size: 14px;
     font-weight: bold;
   }
@@ -49,15 +53,17 @@ export default {
   .post>.siderBar {
     position: absolute;
     width: 12%;
-    z-index: 999
+    z-index: 999;
+    height: 100%;
+    overflow: auto;
   }
   .post>.rightBody {
-    width: 88%; 
+    width: 88%;
     float:right;
   }
   .post .navBar {
     /*background: #eef1f6; */
-    width:100%; 
+    width:100%;
     height: 46px;
   }
   .post {
@@ -69,7 +75,7 @@ export default {
     background-color:#324157;
   }
   .post .el-submenu .el-menu-item {
-       min-width: 90px; 
+       min-width: 90px;
   }
   .post .el-submenu__title {
     color: #c5d1de;

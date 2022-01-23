@@ -25,12 +25,12 @@
     <el-table-column
       prop="id"
       label="编号"
-      width="70">     
+      width="70">
     </el-table-column>
     <el-table-column
       prop="name"
       label="姓名"
-      width="120">     
+      width="120">
     </el-table-column>
     <el-table-column
       prop="phone"
@@ -79,11 +79,11 @@
 
   <el-button style="background:#dfe6ec;" @click="handleCreate">添加订单</el-button>
   <!-- 新增功能 -->
-    <el-dialog title="填写订单信息" :visible.sync="dialogeditFormVisible"> 
+    <el-dialog title="填写订单信息" :visible.sync="dialogeditFormVisible">
               <el-form :model="form">
                 <el-form-item label="编号" :label-width="formLabelWidth">
                   <el-input v-model="form.id" auto-complete="off"></el-input>
-                </el-form-item>           
+                </el-form-item>
                 <el-form-item label="姓名" :label-width="formLabelWidth">
                   <el-input v-model="form.name" auto-complete="off"></el-input>
                 </el-form-item>
@@ -109,15 +109,15 @@
               </el-form>
         <div slot="footer" class="dialog-footer">
            <el-button @click="dialogFormVisible = false">取 消</el-button>
-           <el-button type="primary" @click="handleCreateOrder">确 定</el-button> 
+           <el-button type="primary" @click="handleCreateOrder">确 定</el-button>
       </div>
   </el-dialog>
   <!-- 编辑功能 -->
-   <el-dialog title="填写订单信息" :visible.sync="dialogFormVisible"> 
+   <el-dialog title="填写订单信息" :visible.sync="dialogFormVisible">
               <el-form :model="editForm">
                 <el-form-item label="编号" :label-width="formLabelWidth">
                   <el-input v-model="editForm.id" auto-complete="off"></el-input>
-                </el-form-item>           
+                </el-form-item>
                 <el-form-item label="姓名" :label-width="formLabelWidth">
                   <el-input v-model="editForm.name" auto-complete="off"></el-input>
                 </el-form-item>
@@ -144,10 +144,10 @@
               </el-form>
         <div slot="footer" class="dialog-footer">
            <el-button @click="dialogFormVisible = false">取 消</el-button>
-           <el-button type="primary" @click="handledoneEdit">确 定</el-button> 
+           <el-button type="primary" @click="handledoneEdit">确 定</el-button>
       </div>
   </el-dialog>
-    
+
 
   </div>
 </template>
@@ -162,11 +162,11 @@
             formInline:{
               cum: ''
             },
-     
+
        dialogFormVisible: false,
        dialogeditFormVisible: false,
-       form: {  
-              id:'',           
+       form: {
+              id:'',
               name: '',
               phone:'',
               number:'',
@@ -175,10 +175,10 @@
               status:'',
               date: '',
               operate:'' ,
-              delivery: false,           
+              delivery: false,
             },
-        editForm: {  
-              id:'',           
+        editForm: {
+              id:'',
               name: '',
               phone:'',
               number:'',
@@ -187,7 +187,7 @@
               status:'',
               date: '',
               operate:'' ,
-              delivery: false,           
+              delivery: false,
             },
             formLabelWidth: '140px' ,
             pickerOptions0: {
@@ -195,8 +195,8 @@
                 return time.getTime() < Date.now() - 8.64e7;
               }
             }
-          }        
-    }, 
+          }
+    },
         mounted(){
           var vm = this ;
           vm.getList();
@@ -210,7 +210,7 @@
               vm.tableData3 = response.data.tableData3;
             })
           },
-          
+
           //通过编号查询
           handleSearch(){
           console.log("1111")
@@ -255,7 +255,7 @@
               status:'',
               date: '',
               operate:'' ,
-              delivery: false,        
+              delivery: false,
             }
           },
           // 添加订单按钮
@@ -272,8 +272,8 @@
             console.log('新增后的信息数据:',vm.tableData3);
             this.dialogeditFormVisible = false;
             // 提交后弹出成功提示语
-            
-           
+
+
           },
           // 编辑功能
           handleEdit(index, row) {
@@ -295,7 +295,7 @@
               type: 'success'
             });
           },
-          
+
           //转换时间格式方法
           dateChange(val) {
             this.form.date=val;
@@ -326,5 +326,5 @@
   .customerOrder .el-date-editor.el-input {
     width: 253px;
   }
- 
+
 </style>

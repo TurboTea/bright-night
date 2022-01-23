@@ -9,7 +9,7 @@
                   <div class="jilu_top">
                     <div class="block">
                         <span class="demonstration">录入时间：</span>
-                        <el-date-picker @change="setDate" 
+                        <el-date-picker @change="setDate"
                           v-model="ruleForm.jilu_date"
                           type="date"
                           placeholder="选择日期"
@@ -30,7 +30,7 @@
 
 
                   <!-- 付款单位、经手人等信息 -->
-      
+
                   <div class="jilu_content">
                     <el-form-item label="付款方：" prop="pay_name">
                       <el-input v-model="ruleForm.pay_name"></el-input>
@@ -117,7 +117,7 @@
                     <div class="jilu_top">
                       <div class="block">
                           <span class="demonstration">录入时间：</span>
-                          <el-date-picker @change="setDate2" 
+                          <el-date-picker @change="setDate2"
                             v-model="ModalsForm.jilu_date"
                             type="date"
                             placeholder="选择日期"
@@ -186,7 +186,7 @@
                    <div class="jilu_top">
                      <div class="block">
                          <span class="demonstration">录入时间：</span>
-                         <el-date-picker @change="p_setDate" 
+                         <el-date-picker @change="p_setDate"
                            v-model="paragraphList.jilu_date"
                            type="date"
                            placeholder="选择日期"
@@ -281,7 +281,7 @@
                      <div class="jilu_top">
                        <div class="block">
                            <span class="demonstration">录入时间：</span>
-                           <el-date-picker @change="p_setDate2" 
+                           <el-date-picker @change="p_setDate2"
                              v-model="ModalsForm2.jilu_date"
                              type="date"
                              placeholder="选择日期"
@@ -527,7 +527,7 @@
 
         //获取入款单表格数据
         getData(){
-          this.$http.get(api.cwData_in,{params:{'key':this.jilu_input}}).then(function(response){ 
+          this.$http.get(api.cwData_in,{params:{'key':this.jilu_input}}).then(function(response){
             // console.log(response);
             // console.log('这是我们需要的json数据',response.data.tableList)
             this.tableData = response.data.tableList;
@@ -538,7 +538,7 @@
 
         //获取出款单表格数据
         getData2(){
-          this.$http.get(api.cwData_out).then(function(response){ 
+          this.$http.get(api.cwData_out).then(function(response){
             // console.log(response);
             // console.log('这是我们需要的json数据',response.data.tableList2)
             this.tableData2 = response.data.tableList2;
@@ -560,7 +560,7 @@
         //入款单编辑数据表单时间
         setDate2(val){
           this.ModalsForm.jilu_date=val;
-          
+
           this.tableData.jilu_date = this.ModalsForm.jilu_date;
           // console.log(this.ModalsForm.jilu_date)
           // console.log(this.tableData.jilu_date)
@@ -599,12 +599,12 @@
                   // break;
                 }
               }
-              
+
               if(flag!=1){
               //这里作演示用，正式新增 请提交到接口
               vm.tableData.push(vm.ruleForm)
               console.log('新增后',vm.tableData)
-              
+
               // this.dialogFormVisible = false;
 
               alert('提交成功!');
@@ -638,7 +638,7 @@
           let vm = this;
           //显示弹窗
           vm.dialogFormVisible = true;
-          
+
           // vm.ModalsForm.push(vm.tableData);
           // console.log("弹出表格",vm.ModalsForm);
 
@@ -708,7 +708,7 @@
     //出款单编辑数据表单时间
     p_setDate2(val) {
       this.ModalsForm2.jilu_date=val;
-      
+
       this.tableData2.jilu_date = this.ModalsForm2.jilu_date;
     },
 
@@ -751,7 +751,7 @@
           //这里作演示用，正式新增 请提交到接口
           vm.tableData2.push(vm.paragraphList)
           console.log('新增后',vm.tableData2)
-          
+
           // this.dialogFormVisible = false;
 
           alert('提交成功!');
@@ -914,7 +914,7 @@
     margin-left: 30px;
     margin-bottom: 30px;
   }
-  
+
 
   .jilu .jilu_news .jilu_one .el-input{
     width: 16%;
